@@ -93,15 +93,6 @@ a {
 	}
 }
 
-/* @media (max-width: 500px) {
-	.heroSection {
-		background-position: top;
-		background-image: url("../assests/images/iPhone\ 11\ Pro/heroImage.png") !important;
-		background-size: cover !important;
-		background-repeat: none !important;
-	}
-} */
-
 .heroSection {
 	position: relative;
 
