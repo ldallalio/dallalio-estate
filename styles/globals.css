@@ -54,16 +54,25 @@ a {
 .navbar .toggleBtn {
 	display: none;
 }
+
+.toggleBtn {
+	font-size: 21px;
+}
 @media (max-width: 900px) {
 	.navbar ul,
 	.navbar .contactBtn {
 		display: none;
 	}
 	.navbar.active {
+		padding-top: 2em;
+		display: flex;
+		flex-direction: column;
+
 		height: 100vh;
 		width: 100vw;
-		background-color: blue;
+		background-color: #252527;
 		position: fixed;
+		z-index: 1;
 	}
 	.navbar.active ul {
 		display: flex;
@@ -88,7 +97,6 @@ a {
 	}
 	.heroSection {
 		background-position: left !important;
-
 		background-size: cover !important;
 		background-repeat: none !important;
 	}
