@@ -45,6 +45,7 @@ a {
 
 .navbar a:hover {
 	color: antiquewhite;
+	transition: all 0.5ms;
 }
 
 .navbar ul :nth-child(1) {

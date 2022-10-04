@@ -8,10 +8,16 @@ export default function Home() {
 	return (
 		<div className={styles.container}>
 			<Header />
-
 			<main className={styles.main}>
 				<Hero />
 			</main>
+			<style jsx global>{`
+				html,
+				body {
+					font-family: Lobster;
+				}
+			`}</style>
+			;
 		</div>
 	);
 }
