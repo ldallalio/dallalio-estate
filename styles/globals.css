@@ -85,4 +85,30 @@ a {
 	.navbar.active .contactBtn {
 		display: none;
 	}
+	.heroSection {
+		background-position: left !important;
+
+		background-size: cover !important;
+		background-repeat: none !important;
+	}
+}
+
+/* @media (max-width: 500px) {
+	.heroSection {
+		background-position: top;
+		background-image: url("../assests/images/iPhone\ 11\ Pro/heroImage.png") !important;
+		background-size: cover !important;
+		background-repeat: none !important;
+	}
+} */
+
+.heroSection {
+	position: relative;
+
+	height: calc(100vh - 80px);
+	width: 100vw;
+	background-image: url("../assests/images//heroImageX2.png");
+	background-size: cover;
+	background-repeat: none;
+	background-position: bottom;
 }
