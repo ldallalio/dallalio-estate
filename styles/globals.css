@@ -44,7 +44,8 @@ a {
 }
 
 .navbar a:hover {
-	color: antiquewhite;
+	transition: 0.3s;
+	color: gold;
 	transition: all 0.5ms;
 }
 
@@ -96,8 +97,9 @@ a {
 		display: none;
 	}
 	.heroSection {
-		background-position: left !important;
-		background-size: cover !important;
+		background-image: url("../assests/images/mobileHeroImage.png") !important;
+		background-position: bottom !important;
+		background-size: stretch !important;
 		background-repeat: none !important;
 	}
 }
@@ -107,8 +109,120 @@ a {
 
 	height: calc(100vh - 80px);
 	width: 100vw;
-	background-image: url("../assests/images//heroImageX2.png");
+	background-image: url("../assests/images/Sharon\ DallalioLARGE.png");
 	background-size: cover;
 	background-repeat: none;
 	background-position: bottom;
+}
+
+.heroText {
+	color: white;
+	padding-top: 36%;
+	padding-left: 30%;
+}
+
+.heroText h2 {
+	font-size: 4rem;
+}
+
+.heroText p {
+	font-size: 2rem;
+}
+
+.contact {
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100vw;
+	background-image: url("https://images.unsplash.com/photo-1541123603104-512919d6a96c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80");
+	background-size: cover;
+	background-position: center;
+}
+
+.contactForm {
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	max-width: 700px;
+	min-width: 320px;
+	width: 600px;
+	box-shadow: 3px 0px 30px 1px rgba(0, 0, 0, 0.142);
+	border-radius: 7px;
+	background-color: white;
+}
+.contact h2 {
+	margin-bottom: 1em;
+	text-align: center;
+	font-size: 2em;
+}
+
+.contactForm input,
+textarea {
+	padding: 3px;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	height: 40px;
+	border: #252527 solid 1px;
+	border-radius: 7px;
+}
+.contactForm label {
+	font-size: 1.3rem;
+}
+
+.contactForm button {
+	margin-top: 1em;
+	height: 40px;
+	background-color: rgb(0, 162, 137);
+	border-style: none;
+	color: white;
+	border-radius: 7px;
+	font-weight: 600;
+	font-size: 18px;
+}
+.contactForm button:hover {
+	transition: all 0.2s;
+	background-color: gold;
+	color: black;
+}
+
+.reviewSection {
+	font-family: Arial, Helvetica, sans-serif;
+	min-height: 300px;
+	background-color: white;
+	text-align: center;
+	padding: 0;
+	/* flex-flow: row wrap;
+	justify-content: center;
+	align-items: center; */
+}
+
+.reviewItem {
+	width: 300px;
+	margin: 2em;
+}
+.reviews {
+	display: flex;
+	justify-content: space-around !important;
+	align-items: center;
+	flex-flow: row wrap;
+}
+
+.reviewStar {
+	color: gold;
+	font-size: 20px;
+	margin-bottom: 1em;
+}
+.reviewText {
+	margin-bottom: 1em;
+}
+.reviewName {
+	font-weight: 600;
+	font-size: 21px;
+}
+
+@media (max-width: 500px) {
+	.contactForm {
+		width: 100%;
+	}
 }

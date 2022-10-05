@@ -3,6 +3,9 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import Hero from "../components/HomeHero";
+import ContactForm from "../components/ContactForm";
+import ReviewsSection from "../components/ReviewsSection";
+import ListingsSection from "../components/ListingsSection";
 
 export default function Home() {
 	return (
@@ -10,6 +13,13 @@ export default function Home() {
 			<Header />
 			<main className={styles.main}>
 				<Hero />
+				<ListingsSection />
+				<div className='reviewSection'>
+					<ReviewsSection />
+				</div>
+				<div className='contact'>
+					<ContactForm />
+				</div>
 			</main>
 			<style jsx global>{`
 				html,
@@ -17,7 +27,6 @@ export default function Home() {
 					font-family: Lobster;
 				}
 			`}</style>
-			;
 		</div>
 	);
 }
