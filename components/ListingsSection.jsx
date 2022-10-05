@@ -48,6 +48,7 @@ function ListingsSection() {
 					/>
 					<h3>{listing.location.address.line}</h3>
 					<h3>{listing.location.address.city}</h3>
+					<h3>{listing.list_price}</h3>
 				</div>
 			);
 		});
