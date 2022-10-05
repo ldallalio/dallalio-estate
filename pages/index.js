@@ -13,10 +13,13 @@ export default function Home() {
 			<Header />
 			<main className={styles.main}>
 				<Hero />
-				<ListingsSection />
 				<div className='reviewSection'>
 					<ReviewsSection />
 				</div>
+				<div className='listings'>
+					<ListingsSection />
+				</div>
+
 				<div className='contact'>
 					<ContactForm />
 				</div>

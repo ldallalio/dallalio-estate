@@ -1,8 +1,13 @@
-import { useState, useEffect } from "React";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 function ListingsSection() {
-	let listings = [];
-	let data;
+	const [loading, setLoading] = useState(true);
+	const [listings, setListings] = useState();
+
+	useEffect(() => {
+		getListings();
+	}, []);
 
 	const getListings = async () => {
 		const options = {
@@ -18,11 +23,35 @@ function ListingsSection() {
 			options,
 		)
 			.then((response) => response.json())
-			// .then((response) => console.log(data))
+			.then((response) => {
+				setListings(response.data.home_search.results);
+				console.log(listings);
+				setLoading(false);
+			})
+
 			.catch((err) => console.error(err));
 	};
 
-	// data = getListings(res).then((res) => res.json());
+	if (loading) {
+		return <h1>Loading...</h1>;
+	} else {
+		return listings.map((listing) => {
+			return (
+				<div className='listingItem' key={listing.property_id}>
+					<Image
+						src={listing.photos[0].href}
+						alt='listing'
+						width={500}
+						height={500}
+						// blurDataURL="data:..." automatically provided
+						// placeholder='blur' // Optional blur-up while loading
+					/>
+					<h3>{listing.location.address.line}</h3>
+					<h3>{listing.location.address.city}</h3>
+				</div>
+			);
+		});
+	}
 }
 
 export default ListingsSection;

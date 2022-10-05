@@ -226,3 +226,16 @@ textarea {
 		width: 100%;
 	}
 }
+
+.listings {
+	padding: 2em;
+	gap: 2em;
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+}
+
+.listingItem {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
