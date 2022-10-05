@@ -102,6 +102,12 @@ a {
 		background-size: stretch !important;
 		background-repeat: none !important;
 	}
+	.listings {
+		padding: 2em;
+		gap: 2em;
+		display: grid;
+		grid-template-columns: auto auto !important	;
+	}
 }
 
 .heroSection {
