@@ -13,19 +13,18 @@ function ListingsSection() {
 		const options = {
 			method: "GET",
 			headers: {
-				"X-RapidAPI-Key": "99907a0195mshef121eb486d186dp1a1b71jsnaac77bf28187",
+				"X-RapidAPI-Key": process.env.NEXT_PUBLIC_SECRET_KEY,
 				"X-RapidAPI-Host": "us-real-estate.p.rapidapi.com",
 			},
 		};
 
 		await fetch(
-			"https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode?zipcode=70726&offset=0&limit=42",
+			"https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode?zipcode=70726&offset=0&limit=12",
 			options,
 		)
 			.then((response) => response.json())
 			.then((response) => {
 				setListings(response.data.home_search.results);
-				console.log(listings);
 				setLoading(false);
 			})
 
