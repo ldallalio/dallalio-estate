@@ -19,12 +19,17 @@ function ListingsSection() {
 		};
 
 		await fetch(
-			"https://us-real-estate.p.rapidapi.com/v2/for-sale-by-zipcode?zipcode=70726&offset=0&limit=12",
+			"https://us-real-estate.p.rapidapi.com/v2/for-sale?offset=0&limit=12&state_code=la&city=baton%20rouge&sort=newest&price_min=300000",
 			options,
 		)
 			.then((response) => response.json())
 			.then((response) => {
 				setListings(response.data.home_search.results);
+				console.log(
+					"🚀 ~ file: ListingsSection.jsx ~ line 28 ~ .then ~ setListings",
+					listings,
+				);
+
 				setLoading(false);
 			})
 
