@@ -31,7 +31,7 @@ body {
 @keyframes slide-top {
   0% {
     -webkit-transform: translateY(150);
-            transform: translateY(150);
+            transform: translateY(150px);
   }
   100% {
     -webkit-transform: translateY(70px);
@@ -319,7 +319,7 @@ textarea {
 }
 .searchHomePage form input, button{
 	background-color: white;
-	border: #efefef 1px solid;
+	border: #efefef 1px solid ;
 }
 
 .searchHomePage form button .search-description {
@@ -360,12 +360,23 @@ textarea {
 }
 
 .dropdown li{
-	margin-top: 10px;
-	margin-bottom: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	font-size: 14px;
 	list-style-type: none;
 }
-
+.dropdown li p{
+	height: 100%;
+	width: 100%;
+}
 ul #locationDropDown{
 	display:flex !important;
+}
+
+#minPrice{
+	margin-left:200px;
+}
+
+#maxPrice{
+	margin-left:440px;
 }
