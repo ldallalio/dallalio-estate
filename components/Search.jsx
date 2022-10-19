@@ -1,10 +1,23 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useContext, useState } from 'react'
+import  SearchContext  from '../context/SearchContext'
 // https://codepen.io/freshmasterj/pen/qZgVrz
 
 
 
 
 function Search() {
+    const searchResults = useContext(SearchContext);
+
+    function onSubmit(e) {
+        e.preventDefault()
+        const userInput = document.querySelector('.search-input').value;
+        const searchBy = document.querySelector('.searchByFilter').innerText;
+        const minPrice = document.querySelector('.minPriceValue').innerText.replace(/[^\d-]/g, '')+ "000";;
+        const maxPrice = document.querySelector('.maxPriceValue').innerText.replace(/[^\d-]/g, '')+ "000";;
+         searchResults.setSearchResults({userInput, searchBy, minPrice, maxPrice});
+       
+    }
+
     function openMenu(e) {
         if (e.target.className == "searchByFilter") {
         // SearchByFilter
@@ -56,7 +69,7 @@ function Search() {
         })
         // Max Price
          document.querySelector("#maxPrice").addEventListener("click", (e) => {
-            document.querySelector(".maxPriceValue").innerText = e.target.innerText;
+            document.querySelector(".maxPriceValue").innerText = e.target.innerText
             document.querySelector("#maxPrice").classList.add("hidden");
         })
     },[])
@@ -71,24 +84,26 @@ function Search() {
                       <li><p>City</p></li>
                       <li><p>Zipcode</p></li>  
                   </ul>
-                  <button type='button' onClick={openMenu}><p className='search-description'>Min Price</p><p className='minPriceValue'>-</p></button>
-                  <ul  id="minPrice" className='dropdown slide-top hidden'>
-                      <li  value={100000}>100K</li>
+                  <button type='button' onClick={openMenu}><p className='search-description'>Min Price</p><p className='minPriceValue'>0</p></button>
+                  <ul id="minPrice" className='dropdown slide-top hidden'>
+                      <li value={100000}>0</li>
+                      <li value={100000}>100K</li>
                       <li value={200000}>200K</li>
                       <li value={300000}>300K</li>  
                       <li value={400000}>400K</li>  
                       <li value={500000}>500K</li>  
-                      <li value={1000000}>1M</li>  
+                      <li value={1000000}>999K</li>
+
                   </ul>
                   <button type='button' onClick={openMenu}><p className='search-description'>Max Price</p><p className='maxPriceValue'>-</p></button><ul id="maxPrice"  className='dropdown slide-top hidden'>
-                      <li  value={100000}>100K</li>
+                      <li value={100000}>100K</li>
                       <li value={200000}>200K</li>
                       <li value={300000}>300K</li>  
                       <li value={400000}>400K</li>  
                       <li value={500000}>500K</li>  
-                      <li value={1000000}>1M</li>  
+                      <li value={1000000}>900K</li>  
                   </ul>
-                <button className='search-btn' type="submit">Search</button>
+                <button className='search-btn' type="button" onClick={onSubmit}>Search</button>
           </form>
         </div>
       </>
