@@ -73,12 +73,20 @@ function Search() {
                   </ul>
                   <button type='button' onClick={openMenu}><p className='search-description'>Min Price</p><p className='minPriceValue'>-</p></button>
                   <ul  id="minPrice" className='dropdown slide-top hidden'>
-                      <li>100K</li>
-                      <li>200K</li>  
+                      <li  value={100000}>100K</li>
+                      <li value={200000}>200K</li>
+                      <li value={300000}>300K</li>  
+                      <li value={400000}>400K</li>  
+                      <li value={500000}>500K</li>  
+                      <li value={1000000}>1M</li>  
                   </ul>
                   <button type='button' onClick={openMenu}><p className='search-description'>Max Price</p><p className='maxPriceValue'>-</p></button><ul id="maxPrice"  className='dropdown slide-top hidden'>
-                      <li>200k</li>
-                      <li>300k</li>  
+                      <li  value={100000}>100K</li>
+                      <li value={200000}>200K</li>
+                      <li value={300000}>300K</li>  
+                      <li value={400000}>400K</li>  
+                      <li value={500000}>500K</li>  
+                      <li value={1000000}>1M</li>  
                   </ul>
                 <button className='search-btn' type="submit">Search</button>
           </form>
